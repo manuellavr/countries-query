@@ -11,10 +11,16 @@ export default function Countries(){
 
 	return (
         <div className="container">
+        <div className="row justify-content-center"><h1>Country Info</h1></div>
         	{ alphabet.map(letter => <button className="btn--alphabet" key={letter} value={letter} onClick={(e) => refetch({regex: e.target.value + "."})}>{letter}</button>) }
-        	<div className="country-list">
-            	{countries && countries.map(country => <Country key={country.code} country={ country } />)}
-        	</div>
+        	<div className="country-list row">
+        		{countries && countries.map(country => 
+        			<div className="col-md-3" key={country.code}>
+            			<Country key={country.code} country={ country } />
+            		</div>)
+            	}
+           	</div>
+        	
         </div>
     );
 
