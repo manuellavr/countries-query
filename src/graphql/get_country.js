@@ -1,13 +1,11 @@
 import gql from 'graphql-tag';
 
-export const GET_COUNTRIES= gql`
-    query countries($regex: String) {
-        countries(filter: {code: {regex: $regex}}){
+export const GET_COUNTRY= gql`
+    query country($code: ID!) {
+        country(code: $code){
 		    code
 		    name
-			code
-		    name
-   			continent{
+    		continent{
 		      name
 		    }
 		    native
@@ -17,10 +15,9 @@ export const GET_COUNTRIES= gql`
 		    languages{
 		      name
 		    }
-		    emoji
 		    states{
 		      name
 		    }
-		  }
+		}
     }
 `;

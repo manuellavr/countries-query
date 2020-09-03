@@ -1,13 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 export default function Country({ country }) {
     return (
-        <a href="">
+        <Link to={{
+            pathname:`country/${country.code}`,
+            country: country
+        }}>
         <div className="country">
-            <img className="country__img" src={`https://www.countryflags.io/${country.code}/flat/64.png`} />
+            <img className="country__img" alt="a flag icon" src={`https://www.countryflags.io/${country.code}/flat/64.png`} />
             <p>{country.code}</p>
             <p>{country.name}</p>
         </div>
-        </a>
+        </Link>
     );
 }

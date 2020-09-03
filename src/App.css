@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: black;
+}
+
+body{
+    background-color: #F7F3F3;
 }
 
 .App-logo {
@@ -28,8 +33,13 @@
   color: #61dafb;
 }
 
+.btn-container{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
 .btn--alphabet{
-  margin: 30px 0px 20px 15px;
+  margin-left: 20px;
   cursor: pointer;
   background: none;
   border: none;
@@ -44,6 +54,15 @@
   color: grey;
 }
 
+.big_txt{
+  font-size: 2rem;
+  padding-top: 10px;
+}
+
+.countries_container{
+  margin-bottom: 40px;
+}
+
 .country-list{
   margin-top: 10px;
   line-height: 1.5rem;
@@ -55,10 +74,10 @@
   margin: 10px 10px 10px 10px;
   color: white;
   font-weight: 600;
-  background-image: linear-gradient(#E52BBA, #FFC300);
-  border-radius: 20px;
+  background-image: linear-gradient(#D513D7, #E1CC20);
+  border-radius: 22px;
   min-height: 200px;
-  align-self: center;
+  text-align: center;  
 }
 
 .country:hover{
@@ -71,6 +90,29 @@
 .country__img{
   margin: 0 auto;
   max-width: 100%;
+}
+
+.country__name{
+  margin-left: 20px;
+}
+
+.info_container{
+  padding-top: 60px;
+}
+
+.info_nav{
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.medium_txt{
+  font-size: 1.2rem;
+}
+
+.subtext{
+  font-size: 1.2rem;
+  margin-top: 40px;
+  text-align: center;
 }
 
 a:hover{

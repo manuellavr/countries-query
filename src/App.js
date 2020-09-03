@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import Countries from './components/Countries.js'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Countries from './components/Countries.js';
+import CountryInfo from './components/CountryInfo.js';
 
 function App() {
 
@@ -12,9 +14,12 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-    <div className="App">
-      <Countries />
-    </div>
+    <Router>
+    <Switch>
+      <Route path="/" exact component={Countries}/>
+      <Route path="/country/:country" exact component={CountryInfo}/>  
+    </Switch>
+    </Router>
     </ApolloProvider>
   );
 }

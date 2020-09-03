@@ -10,9 +10,10 @@ export default function Countries(){
 	const { data: { countries = [] }  = {}, refetch } = useQuery(GET_COUNTRIES, { variables: { regex: "A." } });
 
 	return (
-        <div className="container">
+        <div className="container countries_container">
         <div className="row justify-content-center"><h1>Country Info</h1></div>
-        	{ alphabet.map(letter => <button className="btn--alphabet" key={letter} value={letter} onClick={(e) => refetch({regex: e.target.value + "."})}>{letter}</button>) }
+        <div className="row justify-content-center"><p className="subtext">querying <a href="https://countries.trevorblades.com/" target="__blank">Trevor Blades' GraphQL API</a> for basic information on countries</p></div>
+        <div className="row btn-container">{ alphabet.map(letter => <button className="btn--alphabet" key={letter} value={letter} onClick={(e) => refetch({regex: e.target.value + "."})}>{letter}</button>) }</div>
         	<div className="country-list row">
         		{countries && countries.map(country => 
         			<div className="col-md-3" key={country.code}>
