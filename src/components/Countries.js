@@ -7,15 +7,14 @@ export default function Countries(){
 	
 	const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
-	const { data: { countries = [] }  = {}, refetch
-			} = useQuery(GET_COUNTRIES, {
-    		    variables: { regex: "A." },
-    		});
+	const { data: { countries = [] }  = {}, refetch } = useQuery(GET_COUNTRIES, { variables: { regex: "A." } });
 
 	return (
         <div className="container">
-        	{ alphabet.map(letter => <button key={letter} value={letter} onClick={(e) => refetch({regex: e.target.value + "."})}>{letter}</button>) }
-            {countries && countries.map(country => <Country key={country.code} country={ country } />)}
+        	{ alphabet.map(letter => <button className="btn--alphabet" key={letter} value={letter} onClick={(e) => refetch({regex: e.target.value + "."})}>{letter}</button>) }
+        	<div className="country-list">
+            	{countries && countries.map(country => <Country key={country.code} country={ country } />)}
+        	</div>
         </div>
     );
 

@@ -28,6 +28,37 @@
   color: #61dafb;
 }
 
+.btn--alphabet{
+  margin: 30px 0px 20px 15px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.btn--alphabet:focus{
+  outline: none;
+}
+
+.country-list{
+  margin-top: 10px;
+  line-height: 1.5rem;
+}
+
+.country{
+  display: inline-block;
+  padding-top: 20px;
+  margin: 10px 10px 10px 10px;
+  width: 14rem;
+  background-color: grey;
+  border-radius: 20px;
+  min-height: 200px;
+}
+
+.country__img{
+  margin: 0 auto;
+  max-width: 100%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
