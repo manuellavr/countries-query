@@ -3,8 +3,6 @@ import gql from 'graphql-tag';
 export const GET_COUNTRIES= gql`
     query countries($regex: String) {
         countries(filter: {code: {regex: $regex}}){
-		    code
-		    name
 			code
 		    name
    			continent{
